@@ -30,7 +30,7 @@ public class PanelDatos extends JPanel{
     public PanelDatos(){
         setLayout(new GridBagLayout());
         setBorder(new TitledBorder("Datos del caso"));
-        setPreferredSize(new Dimension(300, 200));        
+        //setPreferredSize(new Dimension(500, 150));        
         GridBagConstraints gbc = new GridBagConstraints();
         
         etiquetaConsecutivo = new JLabel("Consecutivo: ");
@@ -82,7 +82,6 @@ public class PanelDatos extends JPanel{
         add(etiquetaDetalle, gbc);
 
         nDetalle = new JLabel();
-        nDetalle.setPreferredSize(new Dimension(140, 20));
         gbc.gridx = 2;
         add(nDetalle, gbc);
     }

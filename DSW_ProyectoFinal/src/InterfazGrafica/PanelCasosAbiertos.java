@@ -27,7 +27,6 @@ public class PanelCasosAbiertos extends JPanel implements ListSelectionListener 
         
         setLayout(new BorderLayout());
         setBorder(new TitledBorder("Casos pendientes por atender"));
-        setPreferredSize(new Dimension(300, 200));
         
         listadoCasos = new JList();
         listadoCasos.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -37,9 +36,11 @@ public class PanelCasosAbiertos extends JPanel implements ListSelectionListener 
         scroll.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scroll.setBorder(new CompoundBorder(new EmptyBorder(3, 3, 3, 3), new LineBorder(Color.BLACK, 1)));
+        //scroll.setSize(new Dimension(250, 150));
         scroll.getViewport().add(listadoCasos);
 
         add(scroll, BorderLayout.CENTER);
+        add(scroll);
     }
 
 
@@ -65,6 +66,16 @@ public class PanelCasosAbiertos extends JPanel implements ListSelectionListener 
             titulo = casoSeleccionado.darTitulo();
         }
         return titulo;
+    }
+    
+    public int darIdSeleccionado() {
+        int idCaso = 0;
+
+        if (listadoCasos.getSelectedValue() != null) {
+            Caso casoSeleccionado = (Caso) listadoCasos.getSelectedValue();
+            idCaso = casoSeleccionado.darId();
+        }
+        return idCaso;
     }
     
     @Override
