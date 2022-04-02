@@ -206,6 +206,7 @@ public class InterfazGrafica extends JFrame {
         panelDatos.limpiarDatos();
         actualizarLista();
         conexion.close();
+        System.exit(0);
     }
     
     public void atenderCaso() throws SQLException{
@@ -279,6 +280,8 @@ public class InterfazGrafica extends JFrame {
             
             panelDatos.limpiarDatos();
             actualizarLista();
+            System.exit(0);
+            conexion.close();
         }
     }
     
